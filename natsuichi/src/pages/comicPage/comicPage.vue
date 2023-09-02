@@ -21,7 +21,7 @@ const mouseLeaveAction = computed(() => {
   <div>
     <div class="about">
       <div v-for="image in comicList" :key="image.preview" class="preview">
-        <a v-bind:href="`${image.id}`">
+        <a v-bind:href="`/comics/${image.id}`">
           <img :src="image.preview" />
           <p>{{ image.title }}</p>
         </a>
