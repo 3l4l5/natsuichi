@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import comicPage from '../pages/comics/index.vue'
+import homePage from '../pages/home/index.vue'
 import comicPreviewPage from '../pages/comics/[id].vue'
 
 const router = createRouter({
@@ -15,7 +16,12 @@ const router = createRouter({
       name: 'comic',
       component: comicPreviewPage,
       props: route => ({ id: route.params.id.toString() })
-    }
+    },
+    {
+      path: '/',
+      name: 'home',
+      component: homePage
+    },
   ]
 })
 

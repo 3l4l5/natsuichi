@@ -89,9 +89,7 @@ const comicList = ref(getComicList(props.id))
 
 <style>
 img {
-  width: 30vw;
+  width: 100%;
   height: auto;
-  min-width: 200px;
-  max-width: 300px;
 }
 </style>

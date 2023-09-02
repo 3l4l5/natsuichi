@@ -32,14 +32,7 @@ const mouseLeaveAction = computed(() => {
 
 <style>
 img {
-  width: 30vw;
+  width: 100%;
   height: auto;
-  min-width: 100px;
-  max-width: 200px;
-}
-.about {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
-  gap: 24px 6%;
 }
 </style>

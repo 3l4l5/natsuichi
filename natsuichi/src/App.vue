@@ -4,9 +4,13 @@
 
 <template>
   <div>
+    <div class="header">
     <router-link to="/"><h1>赤城ナツイチ</h1></router-link>
-    <router-link to="/comics">まんが</router-link>
+    <router-link to="/">HOME</router-link> | 
+    <router-link to="/comics">まんが</router-link> | 
+    <router-link to="/work">おしごと</router-link>
     <hr>
+  </div>
     <router-view />
   </div>
 </template>
