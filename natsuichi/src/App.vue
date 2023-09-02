@@ -6,9 +6,9 @@
   <div>
     <div class="header">
     <router-link to="/"><h1>赤城ナツイチ</h1></router-link>
-    <router-link to="/">HOME</router-link> | 
-    <router-link to="/comics">まんが</router-link> | 
-    <router-link to="/work">おしごと</router-link>
+    <router-link to="/"><span class="menu">🏠HOME</span></router-link> | 
+    <router-link to="/comics"><span class="menu">📚まんが</span></router-link> | 
+    <router-link to="/work"><span class="menu">🖋おしごと</span></router-link>
     <hr>
   </div>
     <router-view />
@@ -79,5 +79,10 @@ nav a:first-of-type {
 }
 hr {
   margin: 20px 0;
+}
+
+.menu {
+  margin: 0 10px;
+  color: rgb(255, 255, 255);
 }
 </style>

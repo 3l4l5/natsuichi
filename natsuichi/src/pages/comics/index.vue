@@ -35,4 +35,7 @@ img {
   width: 100%;
   height: auto;
 }
+p {
+  color: #000;
+}
 </style>
