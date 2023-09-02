@@ -83,6 +83,7 @@ const comicList = ref(getComicList(props.id))
   <div>
     <div v-for="page in comicList.pages" :key="page">
       <img :src="page" />
+      <hr>
     </div>
   </div>
 </template>

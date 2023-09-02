@@ -9,7 +9,8 @@
     <router-link to="/"><span class="menu">🏠HOME</span></router-link> | 
     <router-link to="/comics"><span class="menu">📚まんが</span></router-link> | 
     <router-link to="/work"><span class="menu">🖋おしごと</span></router-link>
-    <hr>
+    <hr class="hr_up">
+    <hr class="hr_down">
   </div>
     <router-view />
   </div>
@@ -77,12 +78,15 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
-hr {
-  margin: 20px 0;
+hr.hr_up {
+  margin: 20px 0 0 0;
+}
+hr.hr_down {
+  margin: 2px 0 20px 0;
 }
 
 .menu {
   margin: 0 10px;
-  color: rgb(255, 255, 255);
+  color: #000;
 }
 </style>

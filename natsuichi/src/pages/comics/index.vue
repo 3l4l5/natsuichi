@@ -22,8 +22,8 @@ const mouseLeaveAction = computed(() => {
     <div class="about">
       <div v-for="image in comicList" :key="image.preview" class="preview">
         <a v-bind:href="`/comics/${image.id}`">
-          <img :src="image.preview" />
-          <p>{{ image.title }}</p>
+          <img class="comic_preview" :src="image.preview" />
+          <p class="comicTitle">{{ image.title }}</p>
         </a>
       </div>
     </div>
@@ -32,10 +32,15 @@ const mouseLeaveAction = computed(() => {
 
 <style>
 img {
-  width: 100%;
+  width: 50%;
   height: auto;
 }
-p {
-  color: #000;
+
+.comic_preview {
+  border: solid 1px #777777; /* 色：グレー */
+}
+.comicTitle {
+  text-align: center;
+  color:black;
 }
 </style>
