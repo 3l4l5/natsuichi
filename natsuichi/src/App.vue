@@ -62,7 +62,7 @@
 
 .menu_component {
   margin: 5px 5px;
-  font-size:min(2vmax, 12px);
+  font-size:min(2vmax, 14px);
 }
 
 hr.hr_up {
