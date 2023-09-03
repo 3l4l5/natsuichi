@@ -49,7 +49,7 @@ const mouseLeaveAction = computed(() => {
   padding: 5px 0;
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(auto-fit, 150px);
+  grid-template-columns: repeat(auto-fit, 200px);
 }
 
 @media(max-width: 400px){
