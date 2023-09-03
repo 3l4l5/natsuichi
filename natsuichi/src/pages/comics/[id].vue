@@ -69,6 +69,7 @@ img {
   width: 100%;
   height: auto;
   text-align:center;
+  pointer-events: none;
 }
 
 /* 画像が横幅に合わせる場合のメディアクエリ */

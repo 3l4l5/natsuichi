@@ -9,6 +9,7 @@
 img {
   width: 100%;
   height: auto;
+  pointer-events: none;
 }
 p {
   font-size: 2rem;
