@@ -1,26 +1,77 @@
 <script setup lang="ts">
-// import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div>
+  <div class="body">
     <div class="header">
-    <router-link to="/"><h1>赤城ナツイチ</h1></router-link>
-    <router-link to="/"><span class="menu">🏠HOME</span></router-link> | 
-    <router-link to="/comics"><span class="menu">📚まんが</span></router-link> | 
-    <router-link to="/work"><span class="menu">🖋おしごと</span></router-link>
-    <hr class="hr_up">
-    <hr class="hr_down">
-  </div>
-    <router-view />
+      <div class="header_component">
+        <router-link to="/"><h1 class="site_title">赤城ナツイチ</h1></router-link>
+        <div class="menu_component">
+          <router-link to="/"><span class="menu">🏠ホーム</span></router-link> | 
+          <router-link  outer-link to="/comics"><span class="menu">📚まんが</span></router-link> | 
+          <router-link to="/work"><span class="menu">🖋れんらく</span></router-link>
+        </div>
+        <hr class="hr_up">
+        <hr class="hr_down">
+      </div>
+    </div>
+    <div class="contents">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+
+.site_title {
+  font-size: 2rem;
+  margin: 10px;
+  padding: 0;
+  color: #219fff;
 }
+
+.body {
+  width: 100vw
+}
+.header {
+  /* position: fixed; */
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* padding: 0px 40px; */
+  /* box-sizing: border-box; */
+  background: #ffffff;
+}
+
+.header_component {
+  size: 100%;
+  background: #ffffff;
+}
+
+
+.contents {
+  margin: auto;
+  width: 95%;
+}
+.menu {
+  margin: 0 5px;
+  color: #000;
+}
+
+.menu_component {
+  margin: 5px 5px;
+  font-size:min(2vmax, 12px);
+}
+
+hr.hr_up {
+  margin: 10px 0 0 0;
+}
+hr.hr_down {
+  margin: 2px 0 2px 0;
+}
+
 
 .logo {
   display: block;
@@ -50,43 +101,5 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-hr.hr_up {
-  margin: 20px 0 0 0;
-}
-hr.hr_down {
-  margin: 2px 0 20px 0;
-}
-
-.menu {
-  margin: 0 10px;
-  color: #000;
 }
 </style>
