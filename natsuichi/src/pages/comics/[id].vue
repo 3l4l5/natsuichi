@@ -24,6 +24,10 @@ const getComicList = (id: string): Comic => {
     {
       comicId: "2",
       pages: 32
+    },
+    {
+      comicId: "3",
+      pages: 3
     }
   ]
   const cdnDomain: string = "pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev"
