@@ -6,6 +6,7 @@ const comicList = [
     title: "8ビートのハイハット",
     description: "",
     publishedAt: new Date("2020-01-01"),
+    pages: 40,
     id: "1",
   },
   {
@@ -13,6 +14,7 @@ const comicList = [
     title: "いいやつなんだろうけどさ",
     description: "",
     publishedAt: new Date("2020-01-01"),
+    pages: 32,
     id: "2",
   },
   {
@@ -20,6 +22,7 @@ const comicList = [
     title: "全部捨てなきゃ思い出す",
     description: "メルカリのモノガタリ大賞に応募した作品です。\n何かを思い出すきっかけって、匂いとか、音楽とか、モノとか、そういう身近にあるものだったりするよなと思い描きました。",
     publishedAt: new Date("2021-09-09"),
+    pages: 3,
     id: "3",
   },
   {
@@ -27,6 +30,7 @@ const comicList = [
     title: "",
     description: "",
     publishedAt: new Date("2999-01-01"),
+    pages: 0,
     id: "#",
   }
 ]
@@ -48,6 +52,7 @@ const mouseLeaveAction = computed(() => {
             <div class="comic_preview_rectangle">
               <img class="comic_preview_image" :src="image.preview" />
               <p class="comicTitle">{{ image.title }}</p>
+              <p class="pageCount" v-if="image.pages">{{ image.pages }}ページ</p>
             </div>
           </div>
         </a>
@@ -87,7 +92,17 @@ img {
 .comicTitle {
   text-align: center;
   color:black;
-  padding: 2px;
-  margin: 2px
+  padding-top: 2px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 90%;
+}
+.pageCount {
+  text-align: center;
+  color:rgb(63, 63, 63);
+  padding: 0px;
+  margin: 0px;
+  font-size: 80%;
 }
 </style>
