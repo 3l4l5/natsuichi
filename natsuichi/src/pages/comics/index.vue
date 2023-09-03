@@ -12,6 +12,12 @@ const comicList = [
     title: "いいやつなんだろうけどさ",
     description: "",
     id: "2",
+  },
+  {
+    preview: "https://pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev/0/0.webp",
+    title: "",
+    description: "",
+    id: "#",
   }
 ]
 const hoverFlag = ref(false)
@@ -40,9 +46,10 @@ const mouseLeaveAction = computed(() => {
 
 <style scoped>
 .preview_container {
+  padding: 5px 0;
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, 150px);
 }
 
 @media(max-width: 400px){
