@@ -1,44 +1,18 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-const comicList = [
-  {
-    preview: 'https://pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev/1/0.webp',
-    title: '8ビートのハイハット',
-    description: '',
-    publishedAt: new Date('2022-07-31'),
-    pages: 40,
-    id: '1',
-    tags: []
-  },
-  {
-    preview: 'https://pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev/2/0.webp',
-    title: 'いいやつなんだろうけどさ',
-    description: '',
-    publishedAt: new Date('2022-09-15'),
-    pages: 32,
-    id: '2',
-    tags: []
-  },
-  {
-    preview: `https://pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev/3/0.webp`,
-    title: '全部捨てなきゃ思い出す',
-    description:
-      'メルカリのモノガタリ大賞に応募した作品です。\n何かを思い出すきっかけって、匂いとか、音楽とか、モノとか、そういう身近にあるものだったりするよなと思い描きました。',
-    publishedAt: new Date('2021-09-09'),
-    pages: 3,
-    id: '3',
-    tags: []
-  },
-  {
-    preview: 'https://pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev/0/0.webp',
-    title: '',
-    description: '',
-    publishedAt: new Date('2999-01-01'),
-    pages: 0,
-    id: '#',
-    tags: []
+import { ref, computed, onMounted } from 'vue'
+import { ComicRepository } from "../../domain/repository/ComicRepository"
+
+const comicList = ref()
+onMounted(async () => {
+  try {
+    const comicRepo = new ComicRepository()
+    const fetchedComicList = await comicRepo.fetchComicList()
+    comicList.value = fetchedComicList
+  } catch (error) {
+    console.error('Error fetching comic list:', error)
   }
-]
+})
+
 const hoverFlag = ref(false)
 const mouseOverAction = computed(() => {
   hoverFlag.value = true

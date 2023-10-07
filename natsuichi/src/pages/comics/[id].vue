@@ -1,6 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { ComicRepository } from "../../domain/repository/ComicRepository"
 
+const comic = ref()
+onMounted(async () => {
+  try {
+    const comicRepo = new ComicRepository()
+    const fetchedComic = await comicRepo.fetchComic(props.id)
+    comic.value = fetchedComic
+  } catch (error) {
+    console.error('Error fetching comic list:', error)
+  }
+})
 // define props section
 const props = defineProps<{
   id: string
