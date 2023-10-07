@@ -36,7 +36,7 @@ export class ComicRepository {
         {
           title: 'はじめまして！安達さん',
           description: 'エッセイ漫画家の真実かもね',
-          publishedAt: new Date('2023-10-7'),
+          publishedAt: new Date('2023-10-07'),
           maxPageNum: 31,
           id: '4',
           tags: []
