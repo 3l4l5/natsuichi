@@ -1,18 +1,28 @@
 export class Comic {
-    preview: string
+  preview: string
+  title: string
+  description: string
+  publishedAt: Date
+  pages: string[]
+  id: string
+  tags: string[]
+  constructor(comicInfo: {
     title: string
     description: string
     publishedAt: Date
-    pages: number
+    maxPageNum: number
     id: string
     tags: string[]
-    constructor(preview: string, title: string, description: string, publishedAt: Date, pages: number, id: string, tags: string[]) {
-        this.preview = preview
-        this.title = title
-        this.description = description
-        this.publishedAt = publishedAt
-        this.pages = pages
-        this.id = id
-        this.tags = tags
-    }
+  }) {
+    const cdnUrlBase = 'https://pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev/'
+    this.pages = [...(new Array(comicInfo.maxPageNum + 1))].map((_, i) => i).map(
+      (pageNum) => `${cdnUrlBase}${comicInfo.id}/${pageNum}.webp`
+    )
+    this.preview = this.pages[0]
+    this.title = comicInfo.title
+    this.description = comicInfo.description
+    this.publishedAt = comicInfo.publishedAt
+    this.id = comicInfo.id
+    this.tags = comicInfo.tags
+  }
 }

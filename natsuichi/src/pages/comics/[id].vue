@@ -1,8 +1,13 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
-import { ComicRepository } from "../../domain/repository/ComicRepository"
+import { ref, type Ref, computed, onMounted } from 'vue'
+import { ComicRepository } from '../../domain/repository/ComicRepository'
+import { Comic } from '../../domain/models/Comic'
 
-const comic = ref()
+// define props section
+const props = defineProps<{
+  id: string
+}>()
+let comic: Ref<Comic | null> = ref(null)
 onMounted(async () => {
   try {
     const comicRepo = new ComicRepository()
@@ -12,64 +17,16 @@ onMounted(async () => {
     console.error('Error fetching comic list:', error)
   }
 })
-// define props section
-const props = defineProps<{
-  id: string
-}>()
-
-// define type section
-
-type Comic = {
-  title: string
-  id: string
-  pages: string[]
-}
-
-// define function section
-const getComicList = (id: string): Comic => {
-  const lastPageDict = [
-    {
-      comicId: "1",
-      pages: 40
-    },
-    {
-      comicId: "2",
-      pages: 32
-    },
-    {
-      comicId: "3",
-      pages: 3
-    }
-  ]
-  const cdnDomain: string = "pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev"
-  const maxPage = lastPageDict.find((obj) => obj.comicId === id)?.pages;
-  const comicList = [
-    {
-      title: "test",
-      id: id,
-      pages: [...Array(maxPage).keys()].map(i => `https://${cdnDomain}/${id}/${i + 1}.webp`)
-    }
-  ]
-  const comicListFiltered = comicList.filter(comic => comic.id === id)
-  if (comicListFiltered.length > 1 ) {
-    throw new Error("More than one comic with the same id")
-  } else if (comicListFiltered.length === 0) {
-    throw new Error("No comic with that id")
-  } else {
-    return comicListFiltered[0]
-  }
-}
-
-// define variable section
-const comicList = ref(getComicList(props.id))
-
 </script>
 
 <template>
   <div class="page_container">
-    <div v-for="page in comicList.pages" :key="page">
+    <div v-if="comic">
+      <div  v-for="page in comic.pages" :key="page">
       <img :src="page" />
-      <hr>
+      <hr />
+    </div>
+    <div class="lastPageDescription"></div>
     </div>
   </div>
 </template>
@@ -83,7 +40,7 @@ const comicList = ref(getComicList(props.id))
 img {
   width: 100%;
   height: auto;
-  text-align:center;
+  text-align: center;
   pointer-events: none;
 }
 

@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, type Ref,computed, onMounted } from 'vue'
 import { ComicRepository } from "../../domain/repository/ComicRepository"
+import { Comic } from "../../domain/models/Comic"
 
-const comicList = ref()
+const comicList: Ref<Comic[] | null> = ref(null)
 onMounted(async () => {
   try {
     const comicRepo = new ComicRepository()
@@ -13,27 +14,32 @@ onMounted(async () => {
   }
 })
 
-const hoverFlag = ref(false)
-const mouseOverAction = computed(() => {
-  hoverFlag.value = true
-})
-const mouseLeaveAction = computed(() => {
-  hoverFlag.value = false
-})
 </script>
 
 <template>
   <div>
     <div class="preview_container">
       <div v-for="image in comicList" :key="image.preview" class="preview">
-        <a v-bind:href="`/comics/${image.id}`">
+        <a v-if="image.id!='0'" v-bind:href="`/comics/${image.id}`">
           <div class="comic_preview">
             <div class="comic_preview_rectangle">
               <img class="comic_preview_image" :src="image.preview" />
               <div class="comic_info" v-if="image.title">
                 <p class="comicTitle">{{ image.title }}</p>
                 <p class="publishedAt">{{ image.publishedAt.toLocaleDateString() }}</p>
-                <p class="pageCount">{{ image.pages }}ページ</p>
+                <p class="pageCount">{{ image.pages.length }}ページ</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a v-else v-bind:href="`/comics/#`">
+          <div class="comic_preview">
+            <div class="comic_preview_rectangle">
+              <img class="comic_preview_image" :src="image.preview" />
+              <div class="comic_info" v-if="image.title">
+                <p class="comicTitle">{{ image.title }}</p>
+                <p class="publishedAt">{{ image.publishedAt.toLocaleDateString() }}</p>
+                <p class="pageCount">{{ image.pages.length }}ページ</p>
               </div>
             </div>
           </div>
