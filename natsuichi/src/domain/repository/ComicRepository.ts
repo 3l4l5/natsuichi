@@ -25,7 +25,7 @@ export class ComicRepository {
       new Comic(
         {
           title: '全部捨てなきゃ思い出す',
-          description: '',
+          description: 'メルカリのモノガタリ大賞に応募した作品です。\n何かを思い出すきっかけって、匂いとか、音楽とか、モノとか、そういう身近にあるものだったりするよなと思い描きました。',
           publishedAt: new Date('2022-09-15'),
           maxPageNum: 3,
           id: '3',
