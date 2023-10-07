@@ -18,7 +18,7 @@ export class Comic {
     this.pages = [...(new Array(comicInfo.maxPageNum + 1))].map((_, i) => i).map(
       (pageNum) => `${cdnUrlBase}${comicInfo.id}/${pageNum}.webp`
     )
-    this.preview = this.pages[0]
+    this.preview = this.pages.shift() as string
     this.title = comicInfo.title
     this.description = comicInfo.description
     this.publishedAt = comicInfo.publishedAt

@@ -3,7 +3,6 @@ import { ref, type Ref, computed, onMounted } from 'vue'
 import { ComicRepository } from '../../domain/repository/ComicRepository'
 import { Comic } from '../../domain/models/Comic'
 import  TwitterShareButton  from '../../components/parts/TwitterShareButton.vue'
-
 // define props section
 const props = defineProps<{
   id: string
@@ -60,6 +59,8 @@ onMounted(async () => {
   text-align: left;
   margin: 0 auto;
   width: 60%;
+  margin-inline: auto;
+  max-inline-size: max-content;
 }
 .comicDescription {
   font-size: 14px;
