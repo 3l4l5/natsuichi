@@ -7,6 +7,7 @@ export class ComicRepository {
       new Comic({
         title: '8ビートのハイハット',
         description: '第374回スピリッツ賞で努力賞をもらいました。',
+        shortDescription: '第374回スピリッツ賞 努力賞受賞作',
         publishedAt: new Date('2022-07-31'),
         maxPageNum: 40,
         id: '1',
@@ -16,6 +17,7 @@ export class ComicRepository {
         {
           title: 'いいやつなんだろうけどさ',
           description: '',
+          shortDescription: '',
           publishedAt: new Date('2022-09-15'),
           maxPageNum: 32,
           id: '2',
@@ -26,6 +28,7 @@ export class ComicRepository {
         {
           title: '全部捨てなきゃ思い出す',
           description: '何かを思い出すきっかけって、匂いとか、音楽とか、モノとか、そういう身近にあるものだったりするよなと思い描きました。',
+          shortDescription: "",
           publishedAt: new Date('2022-09-15'),
           maxPageNum: 3,
           id: '3',
@@ -36,6 +39,7 @@ export class ComicRepository {
         {
           title: 'はじめまして！安達さん',
           description: 'エッセイ漫画家の真実かもね',
+          shortDescription: '',
           publishedAt: new Date('2023-10-07'),
           maxPageNum: 31,
           id: '4',
@@ -44,9 +48,23 @@ export class ComicRepository {
       ),
       new Comic(
         {
+          title: 'さよならバードランド',
+          description: '第93回新人コミック大賞 青年部門 佳作受賞作',
+          shortDescription: '第93回新人コミック大賞 青年部門 佳作受賞作',
+          publishedAt: new Date('2023-12-26'),
+          maxPageNum: 45,
+          id: '5',
+          tags: [],
+          other: true,
+          url: "https://shincomi.shogakukan.co.jp/viewer/93/04/401.html"
+        }
+      ),
+      new Comic(
+        {
           title: '',
           description: '',
-          publishedAt: new Date('2999-09-15'),
+          shortDescription: '',
+          publishedAt: new Date('1000-09-15'),
           maxPageNum: 1,
           id: '0',
           tags: []

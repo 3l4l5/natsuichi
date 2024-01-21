@@ -8,6 +8,11 @@ onMounted(async () => {
   try {
     const comicRepo = new ComicRepository()
     const fetchedComicList = await comicRepo.fetchComicList()
+    fetchedComicList.sort((a, b) => {
+      if (a.publishedAt > b.publishedAt) return -1
+      if (a.publishedAt < b.publishedAt) return 1
+      return 0
+    })
     comicList.value = fetchedComicList
   } catch (error) {
     console.error('Error fetching comic list:', error)
@@ -20,7 +25,20 @@ onMounted(async () => {
   <div>
     <div class="preview_container">
       <div v-for="image in comicList" :key="image.preview" class="preview">
-        <a v-if="image.id!='0'" v-bind:href="`/comics/${image.id}`">
+        <a v-if="image.other" v-bind:href="image.url" target="_blank">
+          <div class="comic_preview">
+            <div class="comic_preview_rectangle">
+              <img class="comic_preview_image" :src="image.preview" />
+              <div class="comic_info" v-if="image.title">
+                <p class="comicTitle">{{ image.title }}<img src="@/assets/newTab.svg" class="inline-image"></p>
+                <p class="publishedAt">{{ image.publishedAt.toLocaleDateString() }}</p>
+                <p class="pageCount">{{ image.pages.length }}ページ</p>
+                <p class="comicDescription">{{ image.shortDescription }}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a v-else-if="image.id!='0'" v-bind:href="`/comics/${image.id}`">
           <div class="comic_preview">
             <div class="comic_preview_rectangle">
               <img class="comic_preview_image" :src="image.preview" />
@@ -28,6 +46,7 @@ onMounted(async () => {
                 <p class="comicTitle">{{ image.title }}</p>
                 <p class="publishedAt">{{ image.publishedAt.toLocaleDateString() }}</p>
                 <p class="pageCount">{{ image.pages.length }}ページ</p>
+                <p class="comicDescription">{{ image.shortDescription }}</p>
               </div>
             </div>
           </div>
@@ -36,11 +55,6 @@ onMounted(async () => {
           <div class="comic_preview">
             <div class="comic_preview_rectangle">
               <img class="comic_preview_image" :src="image.preview" />
-              <div class="comic_info" v-if="image.title">
-                <p class="comicTitle">{{ image.title }}</p>
-                <p class="publishedAt">{{ image.publishedAt.toLocaleDateString() }}</p>
-                <p class="pageCount">{{ image.pages.length }}ページ</p>
-              </div>
             </div>
           </div>
         </a>
@@ -65,17 +79,22 @@ onMounted(async () => {
   }
 }
 
-img {
-  width: 50%;
-  height: auto;
-  pointer-events: none;
-  width: 100%;
-  height: auto;
+.inline-image {
+  height: 1.5em; /* 文字の大きさに合わせる */
+  /* position: relative; */
+  /* display: inline; */
+  vertical-align: middle;
 }
 
 .comic_preview_image {
+  pointer-events: none;
+  /* width: 100%;
+  height: auto; */
+  width: 170px;
+  height: 239.7px;
   border: solid 1px #777777; /* 色：グレー */
 }
+
 .comicTitle {
   text-align: center;
   color: black;
@@ -97,6 +116,14 @@ img {
   text-align: center;
   color: rgb(63, 63, 63);
   padding: 0px;
+  margin: 0px;
+  font-size: 80%;
+}
+
+.comicDescription {
+  text-align: center;
+  color: rgb(63, 63, 63);
+  padding-inline: 10px;
   margin: 0px;
   font-size: 80%;
 }
