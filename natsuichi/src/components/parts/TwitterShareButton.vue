@@ -18,7 +18,7 @@ const twitterShare = () => {
 
 <template>
   <div class="twitter_share">
-    <button id="bottone5" @click="twitterShare">このマンガをtwitterでシェア</button>
+    <button id="bottone5" @click="twitterShare">このマンガを X でシェア</button>
   </div>
 </template>
 

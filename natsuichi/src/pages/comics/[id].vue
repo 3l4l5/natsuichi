@@ -31,16 +31,21 @@ onMounted(async () => {
       <div  v-for="page in comic.pages" :key="page">
       <img :src="page" />
       <hr />
-    </div>
-    <div class="lastPageDescription">
-      <p class="comicTitle">「{{ comic.title }}」</p>
-      <div class="descriptionContainer">
-        <p v-for="description in descriptions" :key="description" class="comicDescription">{{ description }}</p>
       </div>
-      <p class="publishedAt">{{ comic.publishedAt.toLocaleDateString() }}</p>
-      <TwitterShareButton :title=comic.title :url=path />
+      <div class="lastPageDescription">
+        <p class="comicTitle">「{{ comic.title }}」</p>
+        <div class="descriptionContainer">
+          <p v-for="description in descriptions" :key="description" class="comicDescription">{{ description }}</p>
+        </div>
+        <p class="publishedAt">{{ comic.publishedAt.toLocaleDateString() }}</p>
+
+
+      </div>
     </div>
-    </div>
+    <div class="footer" v-if="comic">
+        <div class="spacer"></div>
+        <TwitterShareButton :title=comic.title :url=path />
+      </div>
   </div>
 </template>
 
@@ -53,7 +58,7 @@ onMounted(async () => {
 .lastPageDescription {
   text-align: center;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 .descriptionContainer {
   text-align: left;
@@ -80,6 +85,24 @@ img {
   height: auto;
   text-align: center;
   pointer-events: none;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  padding: 40px, 0px;
+  background-color: #ffffff;
+  z-index: 2;
+}
+.spacer {
+  height: 10px;
+  width: 100%;
+  background-color: #ffffff;
+}
+.hooter-hr {
+  z-index: 1;
 }
 
 /* 画像が横幅に合わせる場合のメディアクエリ */
