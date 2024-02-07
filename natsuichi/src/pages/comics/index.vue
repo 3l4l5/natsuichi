@@ -4,15 +4,25 @@ import { ComicRepository } from "../../domain/repository/ComicRepository"
 import { Comic } from "../../domain/models/Comic"
 
 const comicList: Ref<Comic[] | null> = ref(null)
+
+const sortByPublishedAt = (a: Comic, b: Comic) => {
+  if (a.publishedAt > b.publishedAt) return -1
+  if (a.publishedAt < b.publishedAt) return 1
+  return 0
+}
+
+const sortByPrized = (a: Comic, b: Comic) => {
+  if (a.awarded && !b.awarded) return -1
+  if (!a.awarded && b.awarded) return 1
+  if (a.publishedAt > b.publishedAt) return -1
+  if (a.publishedAt < b.publishedAt) return 1
+  return 0
+}
 onMounted(async () => {
   try {
     const comicRepo = new ComicRepository()
     const fetchedComicList = await comicRepo.fetchComicList()
-    fetchedComicList.sort((a, b) => {
-      if (a.publishedAt > b.publishedAt) return -1
-      if (a.publishedAt < b.publishedAt) return 1
-      return 0
-    })
+    fetchedComicList.sort(sortByPrized)
     comicList.value = fetchedComicList
   } catch (error) {
     console.error('Error fetching comic list:', error)

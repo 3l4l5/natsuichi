@@ -9,6 +9,7 @@ export class Comic {
   tags: string[]
   other: boolean
   url? : string
+  awarded: boolean
   constructor(comicInfo: {
     title: string
     description: string
@@ -19,6 +20,7 @@ export class Comic {
     tags: string[]
     other?: boolean
     url? : string
+    awarded: boolean
   }) {
     const cdnUrlBase = 'https://pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev/'
     this.other = comicInfo.other || false
@@ -35,5 +37,6 @@ export class Comic {
     this.publishedAt = comicInfo.publishedAt
     this.id = comicInfo.id
     this.tags = comicInfo.tags
+    this.awarded = comicInfo.awarded
   }
 }

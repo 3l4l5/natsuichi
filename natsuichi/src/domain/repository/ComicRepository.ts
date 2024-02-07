@@ -11,7 +11,8 @@ export class ComicRepository {
         publishedAt: new Date('2022-07-31'),
         maxPageNum: 40,
         id: '1',
-        tags: []
+        tags: [],
+        awarded: true
       }),
       new Comic(
         {
@@ -21,7 +22,8 @@ export class ComicRepository {
           publishedAt: new Date('2022-09-15'),
           maxPageNum: 32,
           id: '2',
-          tags: []
+          tags: [],
+          awarded: false
         }
       ),
       new Comic(
@@ -32,7 +34,8 @@ export class ComicRepository {
           publishedAt: new Date('2022-09-15'),
           maxPageNum: 3,
           id: '3',
-          tags: []
+          tags: [],
+          awarded: false
         }
       ),
       new Comic(
@@ -43,7 +46,8 @@ export class ComicRepository {
           publishedAt: new Date('2023-10-07'),
           maxPageNum: 31,
           id: '4',
-          tags: []
+          tags: [],
+          awarded: false
         }
       ),
       new Comic(
@@ -56,7 +60,9 @@ export class ComicRepository {
           id: '5',
           tags: [],
           other: true,
-          url: "https://bigcomics.jp/episodes/545946d760eac"
+          url: "https://bigcomics.jp/episodes/545946d760eac",
+          awarded: true
+
         }
       ),
       new Comic(
@@ -67,7 +73,8 @@ export class ComicRepository {
           publishedAt: new Date('1000-09-15'),
           maxPageNum: 1,
           id: '0',
-          tags: []
+          tags: [],
+          awarded: false
         }
       )
     ]
