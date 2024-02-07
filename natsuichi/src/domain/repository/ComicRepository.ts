@@ -56,7 +56,7 @@ export class ComicRepository {
           id: '5',
           tags: [],
           other: true,
-          url: "https://shincomi.shogakukan.co.jp/viewer/93/04/401.html"
+          url: "https://bigcomics.jp/episodes/545946d760eac"
         }
       ),
       new Comic(
