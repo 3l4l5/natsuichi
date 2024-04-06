@@ -53,8 +53,8 @@ export class ComicRepository {
       new Comic(
         {
           title: 'さよならバードランド',
-          description: '第93回新人コミック大賞 青年部門 佳作受賞作',
-          shortDescription: '第93回新人コミック大賞 青年部門 佳作受賞作',
+          description: '第93回 小学館新人コミック大賞 青年部門 佳作受賞作',
+          shortDescription: '第93回 小学館新人コミック大賞 青年部門 佳作受賞作',
           publishedAt: new Date('2023-12-26'),
           maxPageNum: 45,
           id: '5',
