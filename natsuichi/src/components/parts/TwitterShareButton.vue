@@ -9,7 +9,7 @@ const twitterShare = () => {
     'https://twitter.com/intent/tweet?text=' +
     encodeURIComponent('ナツイチ.comで\n') +
     encodeURIComponent(`漫画「${props.title}」をよみました\n`) +
-    encodeURIComponent(`#ナツイチノマンガ\n`) +
+    encodeURIComponent(`#赤城ナツイチのマンガ\n`) +
     encodeURIComponent(`https://ナツイチ.com${props.url}`)
   // シェア用の画面へ移行
   window.open(shareURL, '_blank')
