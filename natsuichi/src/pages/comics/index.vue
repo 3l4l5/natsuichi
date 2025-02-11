@@ -19,12 +19,12 @@ onMounted(async () => {
 <template>
   <div>
     <div class="preview_container">
-      <div v-for="image in comicList" :key="image.preview" class="preview drop-shadow-sm">
+      <div v-for="image in comicList" :key="image.preview" class="preview">
         <div class="p-2">
           <a v-if="image.other" v-bind:href="image.url" target="_blank">
             <div class="comic_preview">
               <div class="comic_preview_rectangle">
-                <img class="comic_preview_image" :src="image.preview" />
+                <img class="comic_preview_image shadow-md" :src="image.preview" />
                 <div class="comic_info" v-if="image.title">
                   <p class="comicTitle">
                     {{ image.title }}<img src="@/assets/newTab.svg" class="inline-block h-[1rem]" />
@@ -39,7 +39,7 @@ onMounted(async () => {
           <a v-else-if="image.id != '0'" v-bind:href="`/comics/${image.id}`">
             <div class="comic_preview">
               <div class="comic_preview_rectangle">
-                <img class="comic_preview_image" :src="image.preview" />
+                <img class="comic_preview_image shadow-md" :src="image.preview" />
                 <div class="comic_info" v-if="image.title">
                   <p class="comicTitle">{{ image.title }}</p>
                   <p class="publishedAt">{{ image.publishedAt.toLocaleDateString() }}</p>
