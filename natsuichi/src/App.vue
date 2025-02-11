@@ -12,9 +12,8 @@
         <div class="menu_component">
           <router-link to="/"><span class="menu">🏠ホーム</span></router-link> |
           <router-link outer-link to="/comics"><span class="menu">📚まんが</span></router-link> |
-          <router-link to="/work"><span class="menu">🖋れんらく</span></router-link
-          >|
-          <router-link to="/work"><span class="menu">🖼️イラスト</span></router-link>
+          <router-link to="/work"><span class="menu">🖋れんらく</span></router-link>
+          <!-- <router-link to="/work"><span class="menu">🖼️イラスト</span></router-link> -->
         </div>
         <hr class="hr_up" />
         <hr class="hr_down" />
