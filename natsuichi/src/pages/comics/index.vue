@@ -1,73 +1,62 @@
 <script setup lang="ts">
-import { ref, type Ref,computed, onMounted } from 'vue'
-import { ComicRepository } from "../../domain/repository/ComicRepository"
-import { Comic } from "../../domain/models/Comic"
+import { ref, type Ref, computed, onMounted } from 'vue'
+import { ComicRepository } from '../../domain/repository/ComicRepository'
+import { Comic } from '../../domain/models/Comic'
 
 const comicList: Ref<Comic[] | null> = ref(null)
 
-const sortByPublishedAt = (a: Comic, b: Comic) => {
-  if (a.publishedAt > b.publishedAt) return -1
-  if (a.publishedAt < b.publishedAt) return 1
-  return 0
-}
-
-const sortByPrized = (a: Comic, b: Comic) => {
-  if (a.awarded && !b.awarded) return -1
-  if (!a.awarded && b.awarded) return 1
-  if (a.publishedAt > b.publishedAt) return -1
-  if (a.publishedAt < b.publishedAt) return 1
-  return 0
-}
 onMounted(async () => {
   try {
     const comicRepo = new ComicRepository()
     const fetchedComicList = await comicRepo.fetchComicList()
-    fetchedComicList.sort(sortByPrized)
     comicList.value = fetchedComicList
   } catch (error) {
     console.error('Error fetching comic list:', error)
   }
 })
-
 </script>
 
 <template>
   <div>
     <div class="preview_container">
       <div v-for="image in comicList" :key="image.preview" class="preview">
-        <a v-if="image.other" v-bind:href="image.url" target="_blank">
-          <div class="comic_preview">
-            <div class="comic_preview_rectangle">
-              <img class="comic_preview_image" :src="image.preview" />
-              <div class="comic_info" v-if="image.title">
-                <p class="comicTitle">{{ image.title }}<img src="@/assets/newTab.svg" class="inline-image"></p>
-                <p class="publishedAt">{{ image.publishedAt.toLocaleDateString() }}</p>
-                <p class="pageCount">{{ image.pages.length }}ページ</p>
-                <p class="comicDescription">{{ image.shortDescription }}</p>
+        <div class="p-2">
+          <a v-if="image.other" v-bind:href="image.url" target="_blank">
+            <div class="comic_preview">
+              <div class="comic_preview_rectangle">
+                <img class="comic_preview_image" :src="image.preview" />
+                <div class="comic_info" v-if="image.title">
+                  <p class="comicTitle">
+                    {{ image.title }}<img src="@/assets/newTab.svg" class="inline-block h-[1rem]" />
+                  </p>
+                  <p class="publishedAt">{{ image.publishedAt.toLocaleDateString() }}</p>
+                  <p class="pageCount">{{ image.pages.length }}ページ</p>
+                  <p class="comicDescription">{{ image.shortDescription }}</p>
+                </div>
               </div>
             </div>
-          </div>
-        </a>
-        <a v-else-if="image.id!='0'" v-bind:href="`/comics/${image.id}`">
-          <div class="comic_preview">
-            <div class="comic_preview_rectangle">
-              <img class="comic_preview_image" :src="image.preview" />
-              <div class="comic_info" v-if="image.title">
-                <p class="comicTitle">{{ image.title }}</p>
-                <p class="publishedAt">{{ image.publishedAt.toLocaleDateString() }}</p>
-                <p class="pageCount">{{ image.pages.length }}ページ</p>
-                <p class="comicDescription">{{ image.shortDescription }}</p>
+          </a>
+          <a v-else-if="image.id != '0'" v-bind:href="`/comics/${image.id}`">
+            <div class="comic_preview">
+              <div class="comic_preview_rectangle">
+                <img class="comic_preview_image" :src="image.preview" />
+                <div class="comic_info" v-if="image.title">
+                  <p class="comicTitle">{{ image.title }}</p>
+                  <p class="publishedAt">{{ image.publishedAt.toLocaleDateString() }}</p>
+                  <p class="pageCount">{{ image.pages.length }}ページ</p>
+                  <p class="comicDescription">{{ image.shortDescription }}</p>
+                </div>
               </div>
             </div>
-          </div>
-        </a>
-        <a v-else v-bind:href="`/comics/#`">
-          <div class="comic_preview">
-            <div class="comic_preview_rectangle">
-              <img class="comic_preview_image" :src="image.preview" />
+          </a>
+          <a v-else v-bind:href="`/comics/#`">
+            <div class="comic_preview">
+              <div class="comic_preview_rectangle">
+                <img class="comic_preview_image" :src="image.preview" />
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -1,18 +1,23 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="body">
     <div class="header">
       <div class="header_component">
-        <router-link to="/"><h1 class="site_title">赤城ナツイチ</h1></router-link>
+        <router-link to="/"
+          ><h1 class="text-4xl p-2 py-4 font-black text-sky-600 font-sans">
+            赤城ナツイチ
+          </h1></router-link
+        >
         <div class="menu_component">
-          <router-link to="/"><span class="menu">🏠ホーム</span></router-link> | 
-          <router-link  outer-link to="/comics"><span class="menu">📚まんが</span></router-link> | 
-          <router-link to="/work"><span class="menu">🖋れんらく</span></router-link>
+          <router-link to="/"><span class="menu">🏠ホーム</span></router-link> |
+          <router-link outer-link to="/comics"><span class="menu">📚まんが</span></router-link> |
+          <router-link to="/work"><span class="menu">🖋れんらく</span></router-link
+          >|
+          <router-link to="/work"><span class="menu">🖼️イラスト</span></router-link>
         </div>
-        <hr class="hr_up">
-        <hr class="hr_down">
+        <hr class="hr_up" />
+        <hr class="hr_down" />
       </div>
     </div>
     <div class="contents">
@@ -22,7 +27,6 @@
 </template>
 
 <style scoped>
-
 .site_title {
   font-size: 2rem;
   margin: 10px;
@@ -31,7 +35,7 @@
 }
 
 .body {
-  width: 100vw
+  width: 100vw;
 }
 .header {
   /* position: fixed; */
@@ -50,7 +54,6 @@
   background: #ffffff;
 }
 
-
 .contents {
   margin: auto;
   width: 95%;
@@ -62,7 +65,7 @@
 
 .menu_component {
   margin: 5px 5px;
-  font-size:min(2vmax, 14px);
+  font-size: min(2vmax, 14px);
 }
 
 hr.hr_up {
@@ -71,7 +74,6 @@ hr.hr_up {
 hr.hr_down {
   margin: 2px 0 2px 0;
 }
-
 
 .logo {
   display: block;

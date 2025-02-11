@@ -2,16 +2,16 @@
 import { ref, type Ref, computed, onMounted } from 'vue'
 import { ComicRepository } from '../../domain/repository/ComicRepository'
 import { Comic } from '../../domain/models/Comic'
-import  TwitterShareButton  from '../../components/parts/TwitterShareButton.vue'
+import TwitterShareButton from '../../components/parts/TwitterShareButton.vue'
 // define props section
 const props = defineProps<{
   id: string
 }>()
 let comic: Ref<Comic | null> = ref(null)
 let descriptions: Ref<string[]> = ref([])
-import {useRoute} from "vue-router";
+import { useRoute } from 'vue-router'
 
-const route = useRoute();
+const route = useRoute()
 const path = route.path
 onMounted(async () => {
   try {
@@ -26,26 +26,30 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="page_container">
-    <div v-if="comic">
-      <div  v-for="page in comic.pages" :key="page">
-      <img :src="page" />
-      <hr />
-      </div>
+  <div class="grid grid-cols-1 justify-items-center gap-4 h-screen">
+    <template v-if="comic">
+      <template v-for="page in comic.pages" :key="page">
+        <div class="h-auto">
+          <img class="py-2" :src="page" />
+          <hr />
+        </div>
+      </template>
       <div class="lastPageDescription">
         <p class="comicTitle">「{{ comic.title }}」</p>
         <div class="descriptionContainer">
-          <p v-for="description in descriptions" :key="description" class="comicDescription">{{ description }}</p>
+          <p v-for="description in descriptions" :key="description" class="comicDescription">
+            {{ description }}
+          </p>
         </div>
         <p class="publishedAt">{{ comic.publishedAt.toLocaleDateString() }}</p>
-
-
+      </div>
+    </template>
+    <div class="footer flex justify-center" v-if="comic">
+      <div>
+        <div class="spacer"></div>
+        <TwitterShareButton :title="comic.title" :url="path" />
       </div>
     </div>
-    <div class="footer" v-if="comic">
-        <div class="spacer"></div>
-        <TwitterShareButton :title=comic.title :url=path />
-      </div>
   </div>
 </template>
 
