@@ -58,6 +58,7 @@
   font-weight: normal;
 }
 */
+@import "tailwindcss";
 
 body {
   /* min-height: 100vh; */
