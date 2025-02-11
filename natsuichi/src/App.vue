@@ -2,7 +2,7 @@
 
 <template>
   <div class="body">
-    <div class="header">
+    <div class="header drop-shadow-sm">
       <div class="header_component">
         <router-link to="/"
           ><h1 class="text-4xl p-2 py-4 font-black text-sky-600 font-sans">

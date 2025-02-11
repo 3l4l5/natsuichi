@@ -6,9 +6,9 @@ export class ComicRepository {
     this.comicList = [
       new Comic({
         title: '恋愛漫画の作り方',
-        description: '',
+        description: 'ガンガンJoker 2025年2月号に掲載していただきました',
         shortDescription: 'ガンガンJoker 2025年2月号掲載作品',
-        publishedAt: new Date('2022-09-15'),
+        publishedAt: new Date('2025-01-22'),
         maxPageNum: 31,
         id: '6',
         tags: [],

@@ -19,7 +19,7 @@ onMounted(async () => {
 <template>
   <div>
     <div class="preview_container">
-      <div v-for="image in comicList" :key="image.preview" class="preview">
+      <div v-for="image in comicList" :key="image.preview" class="preview drop-shadow-sm">
         <div class="p-2">
           <a v-if="image.other" v-bind:href="image.url" target="_blank">
             <div class="comic_preview">

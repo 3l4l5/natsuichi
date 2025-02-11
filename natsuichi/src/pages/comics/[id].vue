@@ -30,7 +30,7 @@ onMounted(async () => {
     <template v-if="comic">
       <template v-for="page in comic.pages" :key="page">
         <div class="h-auto">
-          <img class="py-2" :src="page" />
+          <img class="my-3 shadow-lg" :src="page" />
           <hr />
         </div>
       </template>
