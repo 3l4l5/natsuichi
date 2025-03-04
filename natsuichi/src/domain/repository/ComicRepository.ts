@@ -5,6 +5,18 @@ export class ComicRepository {
     const cdnUrlBase = 'https://pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev/'
     this.comicList = [
       new Comic({
+        title: 'あの子が嫌いな17から18の理由',
+        description: '月刊!スピリッツ 2025年4月号に掲載していただきました',
+        shortDescription: '月刊!スピリッツ 2025年4月号掲載作品',
+        publishedAt: new Date('2025-02-27'),
+        maxPageNum: 35,
+        id: '7',
+        tags: [],
+        other: true,
+        url: 'https://bigcomics.jp/episodes/3f15ed68e79bb/',
+        awarded: false
+      }),
+      new Comic({
         title: '恋愛漫画の作り方',
         description: 'ガンガンJoker 2025年2月号に掲載していただきました',
         shortDescription: 'ガンガンJoker 2025年2月号掲載作品',
