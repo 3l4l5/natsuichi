@@ -1,3 +1,46 @@
+<script setup lang="ts">
+const newsList = [
+  {
+    date: new Date('2025-02-27'),
+    content: '月刊!スピリッツ4月号に、読み切り漫画「あの子が嫌いな17から18の理由」が掲載されました',
+    link: 'https://bigcomics.jp/episodes/3f15ed68e79bb/',
+    blank: true
+  },
+  {
+    date: new Date('2025-02-27'),
+    content:
+      'ぼっち・ざ・ろっく アンソロジー 5巻に 執筆した読み切り漫画「頬を上げるようなMCが」が収録されました',
+    link: 'https://x.com/mangatimekirara/status/1894704966067228819',
+    blank: true
+  },
+  {
+    date: new Date('2025-02-11'),
+    content: 'まんがページに ガンガンJoker 2025年2月号掲載作品「恋愛漫画の作り方」を追加しました',
+    link: '/comics',
+    blank: false
+  },
+  {
+    date: new Date('2025-01-22'),
+    content:
+      'ガンガンJoker 2025年2月号(2025年1月発売)にて、執筆した読み切り漫画「恋愛漫画の作り方」が掲載されました。',
+    link: 'https://x.com/gangan_joker/status/1881735003241066870',
+    blank: true
+  },
+  {
+    date: new Date('2024-11-19'),
+    content:
+      'まんがタイムきららMAX 2025年1月号(2024年11月発売)にて、執筆した漫画「きみとボドゲが作りたい！」1話 2話が掲載されました。',
+    link: 'https://x.com/mangatimekirara/status/1858511262201905188',
+    blank: true
+  },
+  {
+    date: new Date('2024-01-22'),
+    content: 'まんがページにさよならバードランドを追加しました',
+    link: '/comics',
+    blank: false
+  }
+]
+</script>
 <template>
   <!-- <div class="bg-[url(top_image.webp)] w-screen"> -->
   <div class="grid grid-cols-1 justify-items-center">
@@ -15,24 +58,22 @@
       <h3 class="text-xl font-black p-2">ニュース</h3>
       <div class="px-3">
         <ul>
-          <li class="py-1">
-            2025/02/11 <a href="/comics">まんがページ</a>に ガンガンJoker 2025年2月号掲載作品
-            「恋愛漫画の作り方」を追加しました <span class="text-red-500 font-black">NEW!!</span>
-          </li>
-          <li class="py-1">
-            2025/01/22
-            <a href="https://x.com/gangan_joker/status/1881735003241066870"
-              >ガンガンJoker 2025年2月号</a
-            >(2025年1月発売)にて、執筆した読み切り漫画「恋愛漫画の作り方」が掲載されました。
-          </li>
-          <li class="py-1">
-            2024/11/19
-            <a href="https://x.com/mangatimekirara/status/1858511262201905188"
-              >まんがタイムきららMAX 2025年1月号</a
-            >(2024年11月発売)にて、執筆した漫画「きみとボドゲが作りたい！」1話 2話が掲載されました。
-          </li>
-          <li class="py-1">
-            2024/01/22 <a href="/comics">まんがページ</a>にさよならバードランドを追加しました
+          <li v-for="news in newsList" class="">
+            <p>
+              {{ news.date.toLocaleDateString() }}
+              <span
+                class="text-red-500 font-black"
+                v-if="
+                  new Date(news.date) > new Date(new Date().setMonth(new Date().getMonth() - 1))
+                "
+              >
+                new
+              </span>
+            </p>
+            <p class="pb-2 pl-2">
+              {{ news.content }}
+              <span><a :href="news.link" :target="news.blank ? '_blank' : ''">詳細</a></span>
+            </p>
           </li>
         </ul>
       </div>
