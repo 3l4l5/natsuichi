@@ -1,6 +1,13 @@
 <script setup lang="ts">
 const newsList = [
   {
+    date: new Date('2025-03-18'),
+    content:
+      'まんがタイムきららMax 2025年5月号より、「きみとボドゲが作りたい!」の連載が始まりました',
+    link: 'https://x.com/DDDD__akagi/status/1901955504374431815',
+    blank: true
+  },
+  {
     date: new Date('2025-02-27'),
     content: '月刊!スピリッツ4月号に、読み切り漫画「あの子が嫌いな17から18の理由」が掲載されました',
     link: 'https://bigcomics.jp/episodes/3f15ed68e79bb/',
