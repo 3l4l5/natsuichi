@@ -5,6 +5,18 @@ export class ComicRepository {
     const cdnUrlBase = 'https://pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev/'
     this.comicList = [
       new Comic({
+        title: 'きみとボドゲが作りたい！',
+        description: 'まんがタイムきららMAXで連載中',
+        shortDescription: 'まんがタイムきららMAXで連載中',
+        publishedAt: new Date('2025-03-18'),
+        maxPageNum: 16,
+        id: '8',
+        tags: [],
+        other: true,
+        url: 'https://saas.actibookone.com/content/detail?param=eyJjb250ZW50TnVtIjo1NjQ2MjZ9&detailFlg=0&pNo=1',
+        awarded: false
+      }),
+      new Comic({
         title: 'あの子が嫌いな17から18の理由',
         description: '月刊!スピリッツ 2025年4月号に掲載していただきました',
         shortDescription: '月刊!スピリッツ 2025年4月号掲載作品',
