@@ -4,11 +4,18 @@
   <div class="body">
     <div class="header drop-shadow-sm">
       <div class="header_component">
-        <router-link to="/"
-          ><h1 class="text-4xl p-2 py-4 font-black text-sky-600 font-sans">
-            赤城ナツイチ
-          </h1></router-link
-        >
+        <div class="flex justify-between items-center">
+          <router-link to="/"
+            ><h1 class="text-4xl p-2 py-4 font-black text-sky-600 font-sans">
+              赤城ナツイチ
+            </h1></router-link
+          >
+          <div class="pr-5">
+            <a href="https://www.stylemap.co.jp/"
+              ><img src="https://www.f-counter.net/j/65/1748315294/" alt="アクセスカウンター"
+            /></a>
+          </div>
+        </div>
 
         <div class="menu_component">
           <router-link to="/"><span class="menu">🏠ホーム</span></router-link> |
