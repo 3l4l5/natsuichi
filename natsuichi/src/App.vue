@@ -4,11 +4,28 @@
   <div class="body">
     <div class="header drop-shadow-sm">
       <div class="header_component">
-        <router-link to="/"
-          ><h1 class="text-4xl p-2 py-4 font-black text-sky-600 font-sans">
-            赤城ナツイチ
-          </h1></router-link
-        >
+        <div class="flex justify-between items-center">
+          <router-link to="/"
+            ><h1 class="text-4xl p-2 py-4 font-black text-sky-600 font-sans">
+              赤城ナツイチ
+            </h1></router-link
+          >
+          <div class="pr-5">
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center">
+                  <a href="http://www.rays-counter.com/"
+                    ><img
+                      src="http://www.rays-counter.com/d1298_f6_022/6835271a2aedc/"
+                      alt="アクセスカウンター"
+                      border="0"
+                  /></a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
         <div class="menu_component">
           <router-link to="/"><span class="menu">🏠ホーム</span></router-link> |
           <router-link outer-link to="/comics"><span class="menu">📚まんが</span></router-link> |
