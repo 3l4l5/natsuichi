@@ -10,11 +10,6 @@
               赤城ナツイチ
             </h1></router-link
           >
-          <div class="pr-5">
-            <a href="https://www.stylemap.co.jp/"
-              ><img src="https://www.f-counter.net/j/65/1748315294/" alt="アクセスカウンター"
-            /></a>
-          </div>
         </div>
 
         <div class="menu_component">
