@@ -13,7 +13,7 @@ export class ComicRepository {
         id: '8',
         tags: [],
         other: true,
-        url: 'https://saas.actibookone.com/content/detail?param=eyJjb250ZW50TnVtIjo1NjQ2MjZ9&detailFlg=0&pNo=1',
+        url: 'https://manga.nicovideo.jp/comic/72637',
         awarded: false
       }),
       new Comic({
