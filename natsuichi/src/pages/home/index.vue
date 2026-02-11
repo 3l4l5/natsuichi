@@ -1,6 +1,13 @@
 <script setup lang="ts">
 const newsList = [
   {
+    date: new Date('2026-01-27'),
+    content:
+      '「きみとボドゲが作りたい!」第1巻が発売されました！',
+    link: 'https://comic-fuz.com/book/29331',
+    blank: true
+  },
+  {
     date: new Date('2025-03-18'),
     content:
       'まんがタイムきららMax 2025年5月号より、「きみとボドゲが作りたい!」の連載が始まりました',
