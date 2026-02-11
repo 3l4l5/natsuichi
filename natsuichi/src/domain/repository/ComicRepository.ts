@@ -101,16 +101,38 @@ export class ComicRepository {
         comicType: "OneShot"
       }),
       new Comic({
-        title: '',
-        description: '',
+        title: '通う学校が違うのに一緒にいるJK #1',
+        description:'',
         shortDescription: '',
-        publishedAt: new Date('1000-09-15'),
-        maxPageNum: 1,
-        id: '0',
+        publishedAt: new Date('2025-12-29'),
+        maxPageNum: 8,
+        id: '9',
         tags: [],
         awarded: false,
-        comicType: "OneShot"
-      })
+        comicType: "Series"
+      }),
+      new Comic({
+        title: '通う学校が違うのに一緒にいるJK #2',
+        description:'',
+        shortDescription: '',
+        publishedAt: new Date('2025-12-29'),
+        maxPageNum: 8,
+        id: '10',
+        tags: [],
+        awarded: false,
+        comicType: "Series"
+      }),
+      // new Comic({
+      //   title: '',
+      //   description: '',
+      //   shortDescription: '',
+      //   publishedAt: new Date('1000-09-15'),
+      //   maxPageNum: 1,
+      //   id: '0',
+      //   tags: [],
+      //   awarded: false,
+      //   comicType: "OneShot"
+      // })
     ]
   }
   async fetchComicList(): Promise<Comic[]> {
