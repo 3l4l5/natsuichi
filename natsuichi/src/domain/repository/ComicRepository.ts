@@ -13,7 +13,7 @@ export class ComicRepository {
         id: '8',
         tags: [],
         other: true,
-        url: 'https://manga.nicovideo.jp/comic/72637',
+        url: 'https://comic-fuz.com/book/viewer/29331#restore',
         awarded: false
       }),
       new Comic({
