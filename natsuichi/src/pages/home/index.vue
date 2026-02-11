@@ -8,6 +8,13 @@ const newsList = [
     blank: true
   },
   {
+    date: new Date('2025-12-31'),
+    content:
+      'C107に出店しました！',
+    link: 'https://x.com/DDDD__akagi/status/2006172302619120057',
+    blank: true
+  },
+  {
     date: new Date('2025-03-18'),
     content:
       'まんがタイムきららMax 2025年5月号より、「きみとボドゲが作りたい!」の連載が始まりました',
