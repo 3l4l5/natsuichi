@@ -1,4 +1,5 @@
 import { Comic } from '../models/Comic'
+import type { ComicType } from '../models/ComicType'
 export class ComicRepository {
   comicList: Comic[]
   constructor() {
@@ -14,7 +15,8 @@ export class ComicRepository {
         tags: [],
         other: true,
         url: 'https://comic-fuz.com/book/viewer/29331#restore',
-        awarded: false
+        awarded: false,
+        comicType: "Series"
       }),
       new Comic({
         title: 'あの子が嫌いな17から18の理由',
@@ -26,7 +28,8 @@ export class ComicRepository {
         tags: [],
         other: true,
         url: 'https://bigcomics.jp/episodes/3f15ed68e79bb/',
-        awarded: false
+        awarded: false,
+        comicType: "OneShot"
       }),
       new Comic({
         title: '恋愛漫画の作り方',
@@ -36,7 +39,8 @@ export class ComicRepository {
         maxPageNum: 31,
         id: '6',
         tags: [],
-        awarded: false
+        awarded: false,
+        comicType: "OneShot"
       }),
       new Comic({
         title: 'さよならバードランド',
@@ -48,7 +52,8 @@ export class ComicRepository {
         tags: [],
         other: true,
         url: 'https://bigcomics.jp/episodes/545946d760eac',
-        awarded: true
+        awarded: true,
+        comicType: "OneShot"
       }),
       new Comic({
         title: '8ビートのハイハット',
@@ -58,7 +63,8 @@ export class ComicRepository {
         maxPageNum: 41,
         id: '1',
         tags: [],
-        awarded: true
+        awarded: true,
+        comicType: "OneShot"
       }),
       new Comic({
         title: 'いいやつなんだろうけどさ',
@@ -68,7 +74,8 @@ export class ComicRepository {
         maxPageNum: 32,
         id: '2',
         tags: [],
-        awarded: false
+        awarded: false,
+        comicType: "OneShot"
       }),
       new Comic({
         title: 'はじめまして！安達さん',
@@ -78,7 +85,8 @@ export class ComicRepository {
         maxPageNum: 31,
         id: '4',
         tags: [],
-        awarded: false
+        awarded: false,
+        comicType: "OneShot"
       }),
       new Comic({
         title: '全部捨てなきゃ思い出す',
@@ -89,7 +97,8 @@ export class ComicRepository {
         maxPageNum: 3,
         id: '3',
         tags: [],
-        awarded: false
+        awarded: false,
+        comicType: "OneShot"
       }),
       new Comic({
         title: '',
@@ -99,7 +108,8 @@ export class ComicRepository {
         maxPageNum: 1,
         id: '0',
         tags: [],
-        awarded: false
+        awarded: false,
+        comicType: "OneShot"
       })
     ]
   }
@@ -112,5 +122,8 @@ export class ComicRepository {
       throw new Error('Comic not found')
     }
     return comic
+  }
+  async fetchComicListByType(comicType: ComicType): Promise<Comic[]> {
+    return this.comicList.filter((comic) => comic.isTypeOf(comicType))
   }
 }

@@ -1,3 +1,5 @@
+import type { ComicType } from "./ComicType"
+
 export class Comic {
   preview: string
   title: string
@@ -10,6 +12,7 @@ export class Comic {
   other: boolean
   url? : string
   awarded: boolean
+  comicType: ComicType
   constructor(comicInfo: {
     title: string
     description: string
@@ -21,6 +24,7 @@ export class Comic {
     other?: boolean
     url? : string
     awarded: boolean
+    comicType: ComicType
   }) {
     const cdnUrlBase = 'https://pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev/'
     this.other = comicInfo.other || false
@@ -38,5 +42,9 @@ export class Comic {
     this.id = comicInfo.id
     this.tags = comicInfo.tags
     this.awarded = comicInfo.awarded
+    this.comicType = comicInfo.comicType
+  }
+  isTypeOf(comicType: ComicType): boolean{
+    return this.comicType === comicType 
   }
 }
