@@ -122,6 +122,17 @@ export class ComicRepository {
         awarded: false,
         comicType: "Series"
       }),
+      new Comic({
+        title: '通う学校が違うのに一緒にいるJK #3',
+        description:'',
+        shortDescription: '',
+        publishedAt: new Date('2025-12-29'),
+        maxPageNum: 8,
+        id: '11',
+        tags: [],
+        awarded: false,
+        comicType: "Series"
+      }),
       // new Comic({
       //   title: '',
       //   description: '',
