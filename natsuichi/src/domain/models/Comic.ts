@@ -13,6 +13,7 @@ export class Comic {
   url? : string
   awarded: boolean
   comicType: ComicType
+  link?: string
   constructor(comicInfo: {
     title: string
     description: string
@@ -25,6 +26,7 @@ export class Comic {
     url? : string
     awarded: boolean
     comicType: ComicType
+    link?: string
   }) {
     const cdnUrlBase = 'https://pub-d7468921a5ea45d1a7ca87426b5beb75.r2.dev/'
     this.other = comicInfo.other || false
@@ -43,6 +45,7 @@ export class Comic {
     this.tags = comicInfo.tags
     this.awarded = comicInfo.awarded
     this.comicType = comicInfo.comicType
+    this.link = comicInfo.link
   }
   isTypeOf(comicType: ComicType): boolean{
     return this.comicType === comicType 

@@ -109,29 +109,32 @@ export class ComicRepository {
         id: '9',
         tags: [],
         awarded: false,
-        comicType: "Series"
+        comicType: "Series",
+        link: "https://x.com/DDDD__akagi/status/2005556397191352406?s=20"
       }),
       new Comic({
         title: '通う学校が違うのに一緒にいるJK #2',
         description:'',
         shortDescription: '',
-        publishedAt: new Date('2025-12-29'),
+        publishedAt: new Date('2025-01-20'),
         maxPageNum: 8,
         id: '10',
         tags: [],
         awarded: false,
-        comicType: "Series"
+        comicType: "Series",
+        link: "https://x.com/DDDD__akagi/status/2020121371007729992"
       }),
       new Comic({
         title: '通う学校が違うのに一緒にいるJK #3',
         description:'',
         shortDescription: '',
-        publishedAt: new Date('2025-12-29'),
+        publishedAt: new Date('2025-02-15'),
         maxPageNum: 8,
         id: '11',
         tags: [],
         awarded: false,
-        comicType: "Series"
+        comicType: "Series",
+        link: "https://x.com/DDDD__akagi/status/2023018069761905006"
       }),
       // new Comic({
       //   title: '',

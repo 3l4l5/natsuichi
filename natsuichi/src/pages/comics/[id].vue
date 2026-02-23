@@ -35,13 +35,21 @@ onMounted(async () => {
         </div>
       </template>
       <div class="lastPageDescription">
-        <p class="comicTitle">「{{ comic.title }}」</p>
+        <span v-if="comic.link !== undefined">
+          <a v-bind:href="comic.link" target="_blank">
+            <u class="comicTitle">「{{ comic.title }}」</u> 
+          </a>
+        </span>
+        <span v-if="comic.link === undefined">
+          <p class="comicTitle">「{{ comic.title }}」</p>
+        </span>
         <div class="descriptionContainer">
           <p v-for="description in descriptions" :key="description" class="comicDescription">
             {{ description }}
           </p>
         </div>
         <p class="publishedAt">{{ comic.publishedAt.toLocaleDateString() }}</p>
+
       </div>
     </template>
     <div class="footer flex justify-center" v-if="comic">
@@ -107,6 +115,13 @@ img {
 }
 .hooter-hr {
   z-index: 1;
+}
+
+.inline-image {
+  height: 1.5em; /* 文字の大きさに合わせる */
+  /* position: relative; */
+  /* display: inline; */
+  vertical-align: middle;
 }
 
 /* 画像が横幅に合わせる場合のメディアクエリ */
