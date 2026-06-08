@@ -20,12 +20,12 @@ onMounted(async () => {
 <template>
   <div class="px-2 mt-5 mb-1">
     <h1 class="font-mono antialiased text-lg text-lg">連載</h1>
-    <hr class="border-stone-400"/>
+    <hr class="border-stone-400" />
   </div>
-  <ComicListSection :comic-type='"Series"'/>
+  <ComicListSection :comic-type="'Series'" />
   <div class="px-2 mt-5 mb-1">
     <h1 class="font-mono antialiased text-lg text-lg">読切</h1>
-    <hr class="border-stone-400"/>
+    <hr class="border-stone-400" />
   </div>
-  <ComicListSection :comic-type='"OneShot"'/>
+  <ComicListSection :comic-type="'OneShot'" />
 </template>

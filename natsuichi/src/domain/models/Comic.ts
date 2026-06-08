@@ -1,4 +1,4 @@
-import type { ComicType } from "./ComicType"
+import type { ComicType } from './ComicType'
 
 export class Comic {
   preview: string
@@ -10,7 +10,7 @@ export class Comic {
   id: string
   tags: string[]
   other: boolean
-  url? : string
+  url?: string
   awarded: boolean
   comicType: ComicType
   link?: string
@@ -23,7 +23,7 @@ export class Comic {
     id: string
     tags: string[]
     other?: boolean
-    url? : string
+    url?: string
     awarded: boolean
     comicType: ComicType
     link?: string
@@ -33,9 +33,9 @@ export class Comic {
     if (this.other) {
       this.url = comicInfo.url
     }
-    this.pages = [...(new Array(comicInfo.maxPageNum + 1))].map((_, i) => i).map(
-      (pageNum) => `${cdnUrlBase}${comicInfo.id}/${pageNum}.webp`
-    )
+    this.pages = [...new Array(comicInfo.maxPageNum + 1)]
+      .map((_, i) => i)
+      .map((pageNum) => `${cdnUrlBase}${comicInfo.id}/${pageNum}.webp`)
     this.shortDescription = comicInfo.shortDescription
     this.preview = this.pages.shift() as string
     this.title = comicInfo.title
@@ -47,7 +47,7 @@ export class Comic {
     this.comicType = comicInfo.comicType
     this.link = comicInfo.link
   }
-  isTypeOf(comicType: ComicType): boolean{
-    return this.comicType === comicType 
+  isTypeOf(comicType: ComicType): boolean {
+    return this.comicType === comicType
   }
 }

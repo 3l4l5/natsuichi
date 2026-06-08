@@ -17,7 +17,7 @@ const router = createRouter({
       path: '/comics/:id',
       name: 'comic',
       component: comicPreviewPage,
-      props: route => ({ id: route.params.id.toString() }),
+      props: (route) => ({ id: route.params.id.toString() }),
       meta: { title: 'ナツイチのまんが' }
     },
     {
@@ -31,7 +31,7 @@ const router = createRouter({
       name: 'work',
       component: workPage,
       meta: { title: 'ナツイチにれんらく' }
-    },
+    }
   ]
 })
 

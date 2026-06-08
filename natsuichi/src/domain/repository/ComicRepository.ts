@@ -16,7 +16,7 @@ export class ComicRepository {
         other: true,
         url: 'https://comic-fuz.com/book/viewer/29331#restore',
         awarded: false,
-        comicType: "Series"
+        comicType: 'Series'
       }),
       new Comic({
         title: 'あの子が嫌いな17から18の理由',
@@ -29,7 +29,7 @@ export class ComicRepository {
         other: true,
         url: 'https://bigcomics.jp/episodes/3f15ed68e79bb/',
         awarded: false,
-        comicType: "OneShot"
+        comicType: 'OneShot'
       }),
       new Comic({
         title: '恋愛漫画の作り方',
@@ -40,7 +40,7 @@ export class ComicRepository {
         id: '6',
         tags: [],
         awarded: false,
-        comicType: "OneShot"
+        comicType: 'OneShot'
       }),
       new Comic({
         title: 'さよならバードランド',
@@ -53,7 +53,7 @@ export class ComicRepository {
         other: true,
         url: 'https://bigcomics.jp/episodes/545946d760eac',
         awarded: true,
-        comicType: "OneShot"
+        comicType: 'OneShot'
       }),
       new Comic({
         title: '8ビートのハイハット',
@@ -64,7 +64,7 @@ export class ComicRepository {
         id: '1',
         tags: [],
         awarded: true,
-        comicType: "OneShot"
+        comicType: 'OneShot'
       }),
       new Comic({
         title: 'いいやつなんだろうけどさ',
@@ -75,7 +75,7 @@ export class ComicRepository {
         id: '2',
         tags: [],
         awarded: false,
-        comicType: "OneShot"
+        comicType: 'OneShot'
       }),
       new Comic({
         title: 'はじめまして！安達さん',
@@ -86,7 +86,7 @@ export class ComicRepository {
         id: '4',
         tags: [],
         awarded: false,
-        comicType: "OneShot"
+        comicType: 'OneShot'
       }),
       new Comic({
         title: '全部捨てなきゃ思い出す',
@@ -98,44 +98,44 @@ export class ComicRepository {
         id: '3',
         tags: [],
         awarded: false,
-        comicType: "OneShot"
+        comicType: 'OneShot'
       }),
       new Comic({
         title: '通う学校が違うのに一緒にいるJK #1',
-        description:'',
+        description: '',
         shortDescription: '',
         publishedAt: new Date('2025-12-29'),
         maxPageNum: 8,
         id: '9',
         tags: [],
         awarded: false,
-        comicType: "Series",
-        link: "https://x.com/DDDD__akagi/status/2005556397191352406?s=20"
+        comicType: 'Series',
+        link: 'https://x.com/DDDD__akagi/status/2005556397191352406?s=20'
       }),
       new Comic({
         title: '通う学校が違うのに一緒にいるJK #2',
-        description:'',
+        description: '',
         shortDescription: '',
         publishedAt: new Date('2025-01-20'),
         maxPageNum: 8,
         id: '10',
         tags: [],
         awarded: false,
-        comicType: "Series",
-        link: "https://x.com/DDDD__akagi/status/2020121371007729992"
+        comicType: 'Series',
+        link: 'https://x.com/DDDD__akagi/status/2020121371007729992'
       }),
       new Comic({
         title: '通う学校が違うのに一緒にいるJK #3',
-        description:'',
+        description: '',
         shortDescription: '',
         publishedAt: new Date('2025-02-15'),
         maxPageNum: 8,
         id: '11',
         tags: [],
         awarded: false,
-        comicType: "Series",
-        link: "https://x.com/DDDD__akagi/status/2023018069761905006"
-      }),
+        comicType: 'Series',
+        link: 'https://x.com/DDDD__akagi/status/2023018069761905006'
+      })
       // new Comic({
       //   title: '',
       //   description: '',

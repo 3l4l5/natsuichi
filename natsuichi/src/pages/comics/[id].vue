@@ -37,7 +37,7 @@ onMounted(async () => {
       <div class="lastPageDescription">
         <span v-if="comic.link !== undefined">
           <a v-bind:href="comic.link" target="_blank">
-            <u class="comicTitle">「{{ comic.title }}」</u> 
+            <u class="comicTitle">「{{ comic.title }}」</u>
           </a>
         </span>
         <span v-if="comic.link === undefined">
@@ -49,7 +49,6 @@ onMounted(async () => {
           </p>
         </div>
         <p class="publishedAt">{{ comic.publishedAt.toLocaleDateString() }}</p>
-
       </div>
     </template>
     <div class="footer flex justify-center" v-if="comic">

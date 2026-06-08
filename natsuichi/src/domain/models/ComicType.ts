@@ -1,1 +1,1 @@
-export type ComicType = "Series" | "OneShot"
+export type ComicType = 'Series' | 'OneShot'
