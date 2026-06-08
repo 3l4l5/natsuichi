@@ -1,18 +1,11 @@
 <template>
   <div class="p-2 grid grid-cols-1 justify-items-center gap-4">
-    <p class="text-lg">SNSなど</p>
-    <div class="grid-cols-2 grid">
-      <a href="https://twitter.com/DDDD__akagi" target="_blank">
-        <div class="border rounded-sm p-2 m-2 w-30 flex justify-center">twitter</div></a
-      >
-      <!-- <div class="border rounded-sm p-2 m-2 w-30"><a href="https://coconala.com/users/1767934" class="">ココナラ</a></div> -->
-      <a href="https://www.pixiv.net/users/65997288" target="_blank"
-        ><div class="border rounded-sm p-2 m-2 w-30 flex justify-center">Pixiv</div></a
-      >
-      <a href="mailto:akagihajimee@gmail.com" target="_blank"
-        ><div class="border rounded-sm p-2 m-2 w-30 flex justify-center">メール</div></a
-      >
+    <p class="text-lg">Contact</p>
+    <div class="py-3">X: <a href="https://twitter.com/DDDD__akagi" target="_blank">@DDDD__akagi</a></div>
+    <div class="py-3">
+      Pixiv: <a href="https://www.pixiv.net/users/65997288" target="_blank">65997288</a>
     </div>
+    <div class="">email: akagihajimee@gmail.com</div>
   </div>
 </template>
 
