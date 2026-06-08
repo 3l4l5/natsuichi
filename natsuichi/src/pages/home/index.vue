@@ -1,16 +1,20 @@
 <script setup lang="ts">
 const newsList = [
   {
+    date: new Date('2026-06-07'),
+    content: 'COMITIA156で同人誌「僕の彼女」を頒布しました',
+    link: 'https://x.com/DDDD__akagi/status/2063218348444528891?s=20',
+    blank: true
+  },
+  {
     date: new Date('2026-01-27'),
-    content:
-      '「きみとボドゲが作りたい!」第1巻が発売されました！',
+    content: '「きみとボドゲが作りたい!」第1巻が発売されました！',
     link: 'https://comic-fuz.com/book/29331',
     blank: true
   },
   {
     date: new Date('2025-12-31'),
-    content:
-      'C107に出店しました！',
+    content: 'C107に出店しました！',
     link: 'https://x.com/DDDD__akagi/status/2006172302619120057',
     blank: true
   },
